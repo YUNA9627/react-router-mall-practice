@@ -48,7 +48,7 @@ const Navbar = () => {
               ></div>
               <div className="search-section">
                 <div className="search-bar">
-                  <Search size={20} />
+                  <Search size={18} />
                   <input type="text" placeholder="Search for something" />
                   <button className="search-button">SEARCH</button>
                 </div>
