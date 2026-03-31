@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Search, Menu } from "lucide-react";
+import { Search, Menu, X } from "lucide-react";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const menuList = ["SHOP", "COLLECTION", "STYLE", "MORE"];
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
@@ -12,7 +13,10 @@ const Navbar = () => {
         <div className="navbar">
           <div className="top-section">
             <div className="left">
-              <button className="hamburger-button">
+              <button
+                className="hamburger-button"
+                onClick={() => setIsMenuOpen(true)}
+              >
                 <Menu size={22} />
               </button>
             </div>
@@ -53,6 +57,34 @@ const Navbar = () => {
                   <button className="search-button">SEARCH</button>
                 </div>
               </div>
+            </>
+          )}
+
+          {isMenuOpen && (
+            <>
+              <div
+                className="menu-overlay"
+                onClick={() => setIsMenuOpen(false)}
+              ></div>
+
+              <aside className="side-menu">
+                <div className="side-menu-header">
+                  <button
+                    className="close-menu-button"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <X size={22} />
+                  </button>
+                </div>
+
+                <ul className="side-menu-list">
+                  {menuList.map((menu) => (
+                    <li key={menu}>
+                      <a href="/">{menu}</a>
+                    </li>
+                  ))}
+                </ul>
+              </aside>
             </>
           )}
         </div>
