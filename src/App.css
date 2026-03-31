@@ -275,6 +275,10 @@ header {
     grid-template-columns: 1fr auto 1fr;
   }
 
+  .search-section {
+    padding: 16px 16px;
+  }
+
   .logo {
     width: 180px;
   }
@@ -297,6 +301,22 @@ header {
   }
   .search-section {
     padding: 16px 20px;
+  }
+
+  .search-button {
+    font-size: 12px;
+  }
+
+  .right {
+    gap: 10px;
+  }
+
+  .logo {
+    width: 160px;
+  }
+  .search-bar svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
