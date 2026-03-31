@@ -72,6 +72,60 @@ header {
   font-size: 16px;
 }
 
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 90;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  max-width: 85%;
+  height: 100vh;
+  background: #fff;
+  z-index: 100;
+  padding: 20px;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
+}
+
+.side-menu-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.close-menu-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.side-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu-list li {
+  border-bottom: 1px solid #eee;
+}
+
+.side-menu-list a {
+  display: block;
+  padding: 18px 0;
+  text-decoration: none;
+  color: #111;
+  font-size: 16px;
+}
+
 .left {
   display: none;
   background: none;
