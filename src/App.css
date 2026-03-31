@@ -1,0 +1,101 @@
+body {
+  font-family: "Source Sans 3", "Pretendard Variable", "Noto Sans KR",
+    "AppleGothic", "Helvetica", sans-serif;
+  font-weight: 200;
+  margin: 0;
+}
+
+input, button {
+  font: inherit;
+}
+
+.navbar {
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  background: #fff;
+}
+
+.top-section {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.menu-area {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li {
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.top-search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.top-search-button:hover {
+  color: #A98559;
+}
+
+.login-button {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.search-section {
+  padding: 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.search-bar input::placeholder {
+  color: #b8b8b8;
+}
+
+.search-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
