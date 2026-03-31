@@ -69,7 +69,7 @@ header {
 
 .menu-list li {
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .left {
@@ -105,7 +105,7 @@ header {
 
 .login-button {
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .search-section {
@@ -127,8 +127,13 @@ header {
   gap: 20px;
 }
 
+.search-bar svg {
+  flex-shrink: 0;
+}
+
 .search-bar input {
   flex: 1;
+  min-width: 0;
   border: none;
   outline: none;
   font-size: 18px;
@@ -147,6 +152,7 @@ header {
   background: none;
   cursor: pointer;
   padding: 0;
+  font-size: 16px;
 }
 
 .search-overlay {
@@ -162,8 +168,7 @@ header {
 .banner {
   position: relative;
   top: 80px;
-  transition:
-    top 0.2s linear,
+  transition: top 0.2s linear;
 }
 
 .banner img {
@@ -187,6 +192,27 @@ header {
   }
 
   .banner {
-  top: 60px;
+    top: 60px;
+  }
+  .search-bar input::placeholder {
+    font-size: 16px;
+  }
 }
+
+@media (max-width: 480px) {
+  .top-section {
+    padding: 8px 12px;
+  }
+  .search-bar input::placeholder {
+    font-size: 14px;
+  }
+  .search-section {
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .search-section {
+    padding: 10px 15px;
+  }
 }
