@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Search, X } from "lucide-react";
+import { Search, Menu } from "lucide-react";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
@@ -11,8 +11,13 @@ const Navbar = () => {
       <header>
         <div className="navbar">
           <div className="top-section">
+            <div className="left">
+              <button className="hamburger-button">
+                <Menu size={22} />
+              </button>
+            </div>
             <div className="logo-area">
-              <img width={200} id="logo" src={logo} alt="logo" />
+              <img width={200} className="logo" src={logo} alt="logo" />
             </div>
 
             <div className="menu-area">
