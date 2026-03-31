@@ -21,7 +21,9 @@ const Navbar = () => {
               </button>
             </div>
             <div className="logo-area">
-              <img width={200} className="logo" src={logo} alt="logo" />
+              <a href="" onClick={() => window.location.reload()}>
+                <img className="logo" src={logo} alt="logo" />
+              </a>
             </div>
 
             <div className="menu-area">
