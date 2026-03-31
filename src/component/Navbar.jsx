@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Search, X } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const menuList = ["SHOP", "COLLECTION", "STYLE", "MORE"];
@@ -11,7 +12,7 @@ const Navbar = () => {
         <div className="navbar">
           <div className="top-section">
             <div className="logo-area">
-              <img width={200} src="../src/assets/logo.png" alt="logo" />
+              <img width={200} id="logo" src={logo} alt="logo" />
             </div>
 
             <div className="menu-area">
