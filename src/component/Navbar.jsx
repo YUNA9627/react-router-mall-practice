@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import { Search, Menu, X } from "lucide-react";
 import logo from "../assets/logo.png";
+import { useNavigate } from "react-router";
 
 const Navbar = () => {
   const menuList = ["SHOP", "COLLECTION", "STYLE", "MORE"];
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const navigate = useNavigate()
+
+  const goToLogin = () => {
+    navigate("/login")
+  }
+
   return (
     <>
       <header>
-        <div className="navbar">
+        <div className="nav-section">
           <div className="top-section">
             <div className="left">
               <button
@@ -42,7 +49,7 @@ const Navbar = () => {
                 <Search size={20} />
               </button>
 
-              <div className="login-button">LOGIN</div>
+              <div className="login-button" onClick={goToLogin}>LOGIN</div>
             </div>
           </div>
 
