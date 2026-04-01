@@ -243,7 +243,7 @@ header {
 
 .banner {
   position: relative;
-  top: 80px;
+  padding-top: 80px;
   transition: top 0.2s linear;
 }
 
@@ -324,4 +324,92 @@ header {
   .search-section {
     padding: 10px 15px;
   }
+}
+
+.card-item img:hover {
+  transform: scale(1.05);
+}
+
+.login-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.login-wrap {
+  width: 100%;
+  max-width: 390px;
+  padding-top: 120px;
+}
+
+.login-title {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 70px;
+  color: #222;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.login-input-group {
+  margin-bottom: 42px;
+}
+
+.login-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #cfcfcf;
+  background: transparent;
+  padding: 8px 0;
+  font-size: 16px;
+  font-weight: 300;
+  color: #222;
+  outline: none;
+}
+
+.login-input::placeholder {
+  color: #9b9b9b;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.login-action-row {
+  margin-top: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #222;
+  cursor: pointer;
+}
+
+.login-help {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #222;
+}
+
+.login-help a {
+  color: #222;
+  text-decoration: underline;
+}
+
+.login-help span {
+  color: #555;
 }
