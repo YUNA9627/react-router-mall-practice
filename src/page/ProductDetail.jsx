@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button, Badge } from "react-bootstrap";
 import { useParams } from "react-router";
+import "../ProductDetail.css";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -19,8 +20,8 @@ const ProductDetail = () => {
   }, [id]);
 
   if (!product) {
-    return <div>로딩중...</div>;
-  }
+  return <div>로딩중...</div>;
+}
 
   return (
     <div className="product-detail-page">
