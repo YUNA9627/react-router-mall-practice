@@ -16,6 +16,9 @@ const Navbar = () => {
   const goToLogin = () => {
     navigate("/login");
   };
+  const goToHome = () => {
+    navigate("/");
+  };
 
   return (
     <>
@@ -31,7 +34,7 @@ const Navbar = () => {
                 </button>
               </div>
               <div className="logo-area">
-                <a href="" onClick={() => window.location.reload()}>
+                <a href="" onClick={goToHome}>
                   <img className="logo" src={logo} alt="logo" />
                 </a>
               </div>
