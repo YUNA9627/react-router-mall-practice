@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import ProductCard from "../component/ProductCard"
+import ProductCard from "../component/ProductCard";
+import { Container, Row, Col } from "react-bootstrap";
 
 const ProductAll = () => {
   const [productList, setProductList] = useState([]);
   const getProducts = async () => {
-    let url = `http://localhost:5000/products`;
+    let url = `https://my-json-server.typicode.com/YUNA9627/react-router-mall-practice/products`;
     let response = await fetch(url);
     let data = await response.json();
     setProductList(data);
@@ -15,7 +16,15 @@ const ProductAll = () => {
 
   return (
     <div>
-      <ProductCard />
+      <Container>
+        <Row>
+          {productList.map((menu) => (
+            <Col lg={3}>
+              <ProductCard item={menu} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 };
