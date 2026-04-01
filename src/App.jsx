@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Routes, Route } from "react-router";
+import { useEffect, useState } from "react";
+import { Routes, Route, useNavigate } from "react-router";
 import "./App.css";
 import ProductAll from "./page/ProductAll";
 import Login from "./page/Login";
-import ProductDetail from "./page/ProductDetail";
 import Navbar from "./component/Navbar";
+import PrivateRoute from "./routes/PrivateRoute";
 
 // 1. 전체상품페이지, 로그인, 상세페이지
 // 1-1. 내비게이션 바 만들기
@@ -16,13 +16,23 @@ import Navbar from "./component/Navbar";
 // 7. 상품을 검색할 수 있다.
 
 function App() {
+  const [authenticate, setAuthenticate] = useState(false); // true면 로그인이 됨
+  useEffect(() => {
+    console.log("Aaaa", authenticate);
+  }, [authenticate]);
   return (
     <>
       <Navbar />
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route
+          path="/login"
+          element={<Login setAuthenticate={setAuthenticate} />}
+        />
+        <Route
+          path="/product/:id"
+          element={<PrivateRoute authenticate={authenticate} />}
+        />
       </Routes>
     </>
   );
