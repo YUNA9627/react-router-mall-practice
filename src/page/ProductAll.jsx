@@ -15,17 +15,21 @@ const ProductAll = () => {
   }, []);
 
   return (
-    <div>
-      <Container>
-        <Row>
-          {productList.map((menu) => (
-            <Col lg={3}>
-              <ProductCard item={menu} />
-            </Col>
-          ))}
-        </Row>
-      </Container>
-    </div>
+    <>
+      <div>
+        <Container>
+          <Row>
+            {productList
+              .filter((item) => item.choice === true)
+              .map((menu) => (
+                <Col lg={3}>
+                  <ProductCard item={menu} />
+                </Col>
+              ))}
+          </Row>
+        </Container>
+      </div>
+    </>
   );
 };
 
