@@ -7,7 +7,7 @@ const ProductCard = ({ item }) => {
     navigate(`/product/${item.id}`);
   };
   return (
-    <div className="card" onClick={showDetail}>
+    <div className="card-item" onClick={showDetail}>
       <img width={200} src={item?.img} alt="" />
       <div>{item?.choice == true ? "신제품" : ""}</div>
       <div>{item?.title}</div>
