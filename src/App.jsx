@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router";
+import { Routes, Route } from "react-router";
 import "./App.css";
 import ProductAll from "./page/ProductAll";
 import Login from "./page/Login";
 import Navbar from "./component/Navbar";
+import Footer from "./component/Footer";
 import PrivateRoute from "./routes/PrivateRoute";
 
 // 1. 전체상품페이지, 로그인, 상세페이지
@@ -22,7 +23,7 @@ function App() {
   }, [authenticate]);
   return (
     <>
-      <Navbar />
+      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />
       <Routes>
         <Route path="/" element={<ProductAll />} />
         <Route
@@ -34,6 +35,7 @@ function App() {
           element={<PrivateRoute authenticate={authenticate} />}
         />
       </Routes>
+      <Footer />
     </>
   );
 }
