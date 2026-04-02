@@ -30,8 +30,8 @@ const ProductDetail = () => {
           <Col md={6}>
             <div className="product-image-wrap">
               <img
-                src={product.img}
-                alt={product.title}
+                src={product?.img}
+                alt={product?.title}
                 className="product-detail-image"
               />
             </div>
@@ -39,17 +39,17 @@ const ProductDetail = () => {
 
           <Col md={6}>
             <div className="product-info-box">
-              {product.new === true && (
+              {product?.new === true && (
                 <Badge bg="dark" className="mb-3 px-3 py-2">
                   NEW
                 </Badge>
               )}
 
-              <h2 className="product-title">{product.title}</h2>
+              <h2 className="product-title">{product?.title}</h2>
 
               <div className="price-box">
                 <span className="product-price">
-                  ₩{product.price?.toLocaleString()}
+                  ₩{product?.price?.toLocaleString()}
                 </span>
               </div>
 
@@ -72,7 +72,7 @@ const ProductDetail = () => {
 
               <div className="selected-option-box">
                 <div>
-                  <strong>상품명:</strong> {product.title}
+                  <strong>상품명:</strong> {product?.title}
                 </div>
                 <div>
                   <strong>사이즈:</strong> {selectedSize || "선택 안 함"}
@@ -81,7 +81,7 @@ const ProductDetail = () => {
 
               <div className="total-box">
                 <span>총 상품 금액</span>
-                <strong>₩{product.price?.toLocaleString()}</strong>
+                <strong>₩{product?.price?.toLocaleString()}</strong>
               </div>
 
               <div className="action-buttons">
