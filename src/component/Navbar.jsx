@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Search, Menu, X } from "lucide-react";
 import logo from "../assets/logo.png";
+import TopNotice from "./TopNotice";
 import { useNavigate, useLocation } from "react-router";
 
-const Navbar = () => {
+const Navbar = ({ authenticate, setAuthenticate }) => {
   const menuList = ["SHOP", "COLLECTION", "STYLE", "MORE"];
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,20 +12,30 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const hideBanner = location.pathname === "/login";
+  const showTopNotice = location.pathname === "/" && !isSearchOpen;
+  const hideBanner =
+  location.pathname === "/login" || location.pathname.startsWith("/product/");
+
+  const handleLogout = () => {
+    setAuthenticate(false);
+    navigate("/");
+  };
 
   const goToLogin = () => {
     navigate("/login");
   };
-  const goToHome = () => {
+  const goToHome = (event) => {
+    event.preventDefault();
     navigate("/");
   };
+
   const search = (event) => {
     if (event.key === "Enter") {
       // 입력한 검색어를 읽어와서
       let keyword = event.target.value;
       // url을 바꿔준다
       navigate(`/?q=${keyword}`);
+      setIsSearchOpen(false);
     }
   };
   return (
@@ -62,11 +73,18 @@ const Navbar = () => {
                 <Search size={20} />
               </button>
 
-              <div className="login-button" onClick={goToLogin}>
-                LOGIN
-              </div>
+              {authenticate ? (
+                <div className="login-button" onClick={handleLogout}>
+                  LOGOUT
+                </div>
+              ) : (
+                <div className="login-button" onClick={goToLogin}>
+                  LOGIN
+                </div>
+              )}
             </div>
           </div>
+          {showTopNotice && <TopNotice />}
 
           {isSearchOpen && (
             <>
@@ -119,7 +137,7 @@ const Navbar = () => {
         {!hideBanner && (
           <div className="banner">
             <img
-              src="https://storage.heypop.kr/assets/2023/08/24165850/t-8.jpg"
+              src="http://blog.toryburch.com/wp-content/uploads/2018/09/SS19_Shoe_Report_960_slide1_1.jpg"
               alt=""
             />
           </div>
