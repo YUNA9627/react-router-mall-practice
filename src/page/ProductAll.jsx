@@ -20,11 +20,10 @@ const ProductAll = () => {
 
   return (
     <>
-      <div>
+      <div class="product-wrap">
         <Container>
           <Row>
             {productList
-              .filter((item) => item.choice === true)
               .map((menu) => (
                 <Col lg={3}>
                   <ProductCard item={menu} />
